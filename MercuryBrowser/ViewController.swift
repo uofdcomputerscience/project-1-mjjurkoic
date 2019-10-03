@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let projectURLString = "https://raw.githubusercontent.com/rmirabelli/mercuryserver/master/mercury.json"
+    
+    struct ProjectData: Codable {
+        let projectDataList: [[String]]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let session = URLSession(configuration: .ephemeral)
+        let task = session.dataTask(with: URL(string: projectURLString)!) { (data, response, error) in
+            let projectData = try! JSONDecoder().decode(ProjectData.self, from: data!)
+        }
     }
 
 
 }
-
