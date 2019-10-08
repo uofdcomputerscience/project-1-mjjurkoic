@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let mercuryImageService = MercuryImageService()
+    
     let projectURLString = "https://raw.githubusercontent.com/rmirabelli/mercuryserver/master/mercury.json"
     
     struct MercuryData: Codable {
@@ -42,10 +44,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for item in projectData.mercury {
                     self.mercuryArray.append(MercuryType(inputDict: item))
                 }
+                for item in self.mercuryArray {
+                    self.mercuryImageService.addEntry(name: item.name, url: URL(string: item.url)!)
+                }
             }
         }
         task.resume()
-        
+        self.mercuryTableView.reloadData()
         setupTableView()
     }
     
@@ -59,13 +64,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 1
-        return 1
+        return self.mercuryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 2
         let cell = mercuryTableView.dequeueReusableCell(withIdentifier: "mercuryCell", for: indexPath) as! MercuryTableViewCell
         cell.backgroundColor = UIColor.white
+        self.mercuryImageService.getImage(for: self.mercuryArray[indexPath.row].url) { (url, image) in
+            cell.mercuryName.text = self.mercuryArray[indexPath.row].name
+            cell.mercuryType.text = self.mercuryArray[indexPath.row].type
+            cell.mercuryImage.image = image
+        }
         
         return cell
     }
