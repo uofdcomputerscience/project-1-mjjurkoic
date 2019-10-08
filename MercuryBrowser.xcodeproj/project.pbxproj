@@ -14,6 +14,7 @@
 		46F1B4AD234150FC00DF2896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F1B4AC234150FC00DF2896 /* Assets.xcassets */; };
 		46F1B4B0234150FC00DF2896 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46F1B4AE234150FC00DF2896 /* LaunchScreen.storyboard */; };
 		46F1B4B82341511500DF2896 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 46F1B4B72341511500DF2896 /* README.md */; };
+		5BC6F16F234C45DD00A70C9B /* MercuryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6F16E234C45DD00A70C9B /* MercuryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		46F1B4AF234150FC00DF2896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46F1B4B1234150FC00DF2896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46F1B4B72341511500DF2896 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5BC6F16E234C45DD00A70C9B /* MercuryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				46F1B4AC234150FC00DF2896 /* Assets.xcassets */,
 				46F1B4AE234150FC00DF2896 /* LaunchScreen.storyboard */,
 				46F1B4B1234150FC00DF2896 /* Info.plist */,
+				5BC6F16E234C45DD00A70C9B /* MercuryTableViewCell.swift */,
 			);
 			path = MercuryBrowser;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				46F1B4A8234150FA00DF2896 /* ViewController.swift in Sources */,
 				46F1B4A4234150FA00DF2896 /* AppDelegate.swift in Sources */,
 				46F1B4A6234150FA00DF2896 /* SceneDelegate.swift in Sources */,
+				5BC6F16F234C45DD00A70C9B /* MercuryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

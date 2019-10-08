@@ -24,12 +24,38 @@
                                 <rect key="frame" x="20" y="81.5" width="374" height="781.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cZr-Cf-m3Z">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" rowHeight="178" id="t2H-0z-g7g" customClass="MercuryTableViewCell" customModule="MercuryBrowser" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cZr-Cf-m3Z" id="RlW-V3-7Li">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2H-0z-g7g" id="jTN-Pv-n8S">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11y-Ys-TQX">
+                                                    <rect key="frame" x="312" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-Wc-zuT">
+                                                    <rect key="frame" x="20" y="40" width="334" height="127"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHj-at-kuC">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gJx-Wc-zuT" secondAttribute="bottom" constant="11" id="47g-Xu-hXI"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="centerX" secondItem="jTN-Pv-n8S" secondAttribute="centerX" id="B7A-O2-i88"/>
+                                                <constraint firstItem="ZHj-at-kuC" firstAttribute="top" secondItem="jTN-Pv-n8S" secondAttribute="top" constant="11" id="MS1-nV-Ms7"/>
+                                                <constraint firstItem="11y-Ys-TQX" firstAttribute="top" secondItem="jTN-Pv-n8S" secondAttribute="top" constant="11" id="SH2-im-a2X"/>
+                                                <constraint firstItem="ZHj-at-kuC" firstAttribute="leading" secondItem="jTN-Pv-n8S" secondAttribute="leading" constant="20" id="VgV-ar-1va"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="firstBaseline" secondItem="11y-Ys-TQX" secondAttribute="baseline" constant="12.5" symbolType="layoutAnchor" id="gCs-EI-kRY"/>
+                                                <constraint firstAttribute="trailing" secondItem="11y-Ys-TQX" secondAttribute="trailing" constant="20" id="nAr-gw-SQ3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -47,6 +73,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mercuryTableView" destination="u8P-pz-Gl2" id="wYk-JC-A7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

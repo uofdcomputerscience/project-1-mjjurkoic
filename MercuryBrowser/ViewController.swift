@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let projectURLString = "https://raw.githubusercontent.com/rmirabelli/mercuryserver/master/mercury.json"
     
@@ -30,8 +30,7 @@ class ViewController: UIViewController {
     
     var mercuryArray: [MercuryType] = []
     
-    @IBOutlet weak var mercuryTable: UITableView!
-    @IBOutlet weak var mercuryCell: UIView!
+    @IBOutlet weak var mercuryTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +42,36 @@ class ViewController: UIViewController {
                 for item in projectData.mercury {
                     self.mercuryArray.append(MercuryType(inputDict: item))
                 }
-                // Helper function defined elsewhere in ViewController
-                self.fillTableView(dataArray: self.mercuryArray)
             }
         }
         task.resume()
-    }
-
-    func fillTableView(dataArray: [MercuryType]) {
         
+        setupTableView()
     }
-
+    
+    func setupTableView() {
+        mercuryTableView.delegate = self
+        mercuryTableView.dataSource = self
+        mercuryTableView.register(MercuryTableViewCell.self, forCellReuseIdentifier: "mercuryCell")
+        
+        view.addSubview(mercuryTableView)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // 1
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 2
+        let cell = mercuryTableView.dequeueReusableCell(withIdentifier: "mercuryCell", for: indexPath) as! MercuryTableViewCell
+        cell.backgroundColor = UIColor.white
+        
+        return cell
+    }
+    
+    func mercuryTableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
