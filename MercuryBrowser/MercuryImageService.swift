@@ -10,18 +10,18 @@ import UIKit
 
 class MercuryImageService {
     
-    var imageDictionary: Dictionary<String, URL>
+    var imageDictionary: Dictionary<String, String>
     
     init() {
         imageDictionary = [:]
     }
     
-    func addEntry(name: String, url: URL) {
-        self.imageDictionary[name] = url
+    func addEntry(name: String, URLString: String) {
+        self.imageDictionary[name] = URLString
     }
     
     func getImage(for name: String, completion: @escaping ((URL, UIImage) -> Void)) {
-        let url: URL = imageDictionary[name]!
+        let url: URL = URL(string: name)!
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: url) { (data, response, error) in
             if let data = data {

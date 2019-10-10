@@ -10,6 +10,10 @@ import UIKit
 
 class MercuryTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var mercuryName: UILabel!
+    @IBOutlet weak var mercuryType: UILabel!
+    @IBOutlet weak var mercuryImage: UIImageView!
+    
     let cellView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
