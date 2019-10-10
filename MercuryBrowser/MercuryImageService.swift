@@ -21,13 +21,15 @@ class MercuryImageService {
     }
     
     func getImage(for name: String, completion: @escaping ((URL, UIImage) -> Void)) {
-        let url: URL = URL(string: name)!
+        print(imageDictionary)
+        let url: URL = URL(string: imageDictionary[name]!)!
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: url) { (data, response, error) in
+            let imgURL = url
             if let data = data {
                 let image = UIImage(data: data)
                 DispatchQueue.main.async {
-                    completion(url, image!)
+                    completion(imgURL, image!)
                 }
             }
         }

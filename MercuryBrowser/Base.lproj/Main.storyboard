@@ -58,9 +58,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="image" destination="gJx-Wc-zuT" id="fPb-jz-lSG"/>
+                                            <outlet property="img" destination="gJx-Wc-zuT" id="KUh-OE-fxJ"/>
                                             <outlet property="mercuryImage" destination="gJx-Wc-zuT" id="nCX-s8-i5d"/>
                                             <outlet property="mercuryName" destination="ZHj-at-kuC" id="r2r-Ez-8RC"/>
                                             <outlet property="mercuryType" destination="11y-Ys-TQX" id="Mbk-WO-ddn"/>
+                                            <outlet property="name" destination="ZHj-at-kuC" id="bWi-AY-n2y"/>
+                                            <outlet property="type" destination="11y-Ys-TQX" id="CCm-hJ-i9Q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

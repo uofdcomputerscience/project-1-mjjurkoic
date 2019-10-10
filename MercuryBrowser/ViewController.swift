@@ -6,6 +6,7 @@
 //  Copyright © 2019 Russell Mirabelli. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -36,8 +37,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let data = data {
                 let projectData = try! JSONDecoder().decode(MercuryData.self, from: data)
                 self.mercuryArray = projectData.mercury
-                print(self.mercuryArray)
-                print(projectData.mercury)
+//                print(self.mercuryArray)
+//                print(projectData.mercury)
                 for item in projectData.mercury {
                     self.mercuryImageService.addEntry(name: item.name, URLString: item.url)
                 }
@@ -65,17 +66,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 2
         let cell = mercuryTableView.dequeueReusableCell(withIdentifier: "mercuryCell", for: indexPath) as! MercuryTableViewCell
-        self.mercuryImageService.getImage(for: self.mercuryArray[indexPath.row].url) { (url, image) in
-            cell.mercuryName.text = self.mercuryArray[indexPath.row].name
-            cell.mercuryType.text = self.mercuryArray[indexPath.row].type
-            cell.mercuryImage.image = image
+        self.mercuryImageService.getImage(for: self.mercuryArray[indexPath.row].name) { (url, img) in
+            let name = self.mercuryArray[indexPath.row].name
+            let type = self.mercuryArray[indexPath.row].type
+            let image = img
+            cell.name.text = name
+            cell.type.text = type
+            cell.img.image = image
         }
         
         return cell
     }
     
     func mercuryTableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 500
     }
     
 }
