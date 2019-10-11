@@ -57,7 +57,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 2
         let cell = mercuryTableView.dequeueReusableCell(withIdentifier: "mercuryCell", for: indexPath) as! MercuryTableViewCell
-        self.mercuryImageService.getImage(for: self.cellData.mercury[indexPath.row].name) { (url, img) in
+        self.mercuryImageService.getImage(for: self.cellData.mercury[indexPath.row].url) { (url, img) in
             let name = self.cellData.mercury[indexPath.row].name
             let type = self.cellData.mercury[indexPath.row].type
             let image = img

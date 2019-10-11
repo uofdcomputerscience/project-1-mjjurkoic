@@ -24,21 +24,24 @@
                                 <rect key="frame" x="20" y="81.5" width="374" height="781.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="mercuryCell" rowHeight="178" id="t2H-0z-g7g" customClass="MercuryTableViewCell" customModule="MercuryBrowser" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="mercuryCell" rowHeight="178" id="t2H-0z-g7g" customClass="MercuryTableViewCell" customModule="MercuryBrowser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="178"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2H-0z-g7g" id="jTN-Pv-n8S">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="typeLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11y-Ys-TQX">
-                                                    <rect key="frame" x="278.5" y="11" width="75.5" height="21"/>
+                                                    <rect key="frame" x="278.5" y="11" width="75.5" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-Wc-zuT">
-                                                    <rect key="frame" x="20" y="40" width="334" height="127"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-Wc-zuT">
+                                                    <rect key="frame" x="20" y="21" width="334" height="146"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="jPa-d8-0l5"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHj-at-kuC">
                                                     <rect key="frame" x="20" y="11" width="84" height="21"/>
@@ -48,21 +51,21 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gJx-Wc-zuT" secondAttribute="bottom" constant="11" id="47g-Xu-hXI"/>
-                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="centerX" secondItem="jTN-Pv-n8S" secondAttribute="centerX" id="B7A-O2-i88"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="bottom" secondItem="jTN-Pv-n8S" secondAttribute="bottomMargin" id="4jR-ND-Klp"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="bottom" secondItem="jTN-Pv-n8S" secondAttribute="bottomMargin" id="JGk-9e-6bu"/>
                                                 <constraint firstItem="ZHj-at-kuC" firstAttribute="top" secondItem="jTN-Pv-n8S" secondAttribute="top" constant="11" id="MS1-nV-Ms7"/>
                                                 <constraint firstItem="11y-Ys-TQX" firstAttribute="top" secondItem="jTN-Pv-n8S" secondAttribute="top" constant="11" id="SH2-im-a2X"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZHj-at-kuC" secondAttribute="trailing" symbolic="YES" id="VeM-dh-wxM"/>
                                                 <constraint firstItem="ZHj-at-kuC" firstAttribute="leading" secondItem="jTN-Pv-n8S" secondAttribute="leading" constant="20" id="VgV-ar-1va"/>
-                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="firstBaseline" secondItem="11y-Ys-TQX" secondAttribute="baseline" constant="12.5" symbolType="layoutAnchor" id="gCs-EI-kRY"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="leading" secondItem="ZHj-at-kuC" secondAttribute="leading" id="aa8-Ju-aQa"/>
+                                                <constraint firstItem="11y-Ys-TQX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jTN-Pv-n8S" secondAttribute="leading" symbolic="YES" id="hvk-Hs-4sP"/>
                                                 <constraint firstAttribute="trailing" secondItem="11y-Ys-TQX" secondAttribute="trailing" constant="20" id="nAr-gw-SQ3"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="centerX" secondItem="jTN-Pv-n8S" secondAttribute="centerX" id="naY-py-ZC5"/>
+                                                <constraint firstItem="gJx-Wc-zuT" firstAttribute="top" secondItem="11y-Ys-TQX" secondAttribute="bottom" constant="10" id="uSJ-2W-VSi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="image" destination="gJx-Wc-zuT" id="fPb-jz-lSG"/>
                                             <outlet property="img" destination="gJx-Wc-zuT" id="KUh-OE-fxJ"/>
-                                            <outlet property="mercuryImage" destination="gJx-Wc-zuT" id="nCX-s8-i5d"/>
-                                            <outlet property="mercuryName" destination="ZHj-at-kuC" id="r2r-Ez-8RC"/>
-                                            <outlet property="mercuryType" destination="11y-Ys-TQX" id="Mbk-WO-ddn"/>
                                             <outlet property="name" destination="ZHj-at-kuC" id="bWi-AY-n2y"/>
                                             <outlet property="type" destination="11y-Ys-TQX" id="CCm-hJ-i9Q"/>
                                         </connections>

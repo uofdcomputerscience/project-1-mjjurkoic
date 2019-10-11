@@ -29,7 +29,7 @@
 		46F1B4B1234150FC00DF2896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46F1B4B72341511500DF2896 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BAC71E5234CC638002EB247 /* MercuryImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryImageService.swift; sourceTree = "<group>"; };
-		5BC6F16E234C45DD00A70C9B /* MercuryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryTableViewCell.swift; sourceTree = "<group>"; };
+		5BC6F16E234C45DD00A70C9B /* MercuryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryTableViewCell.swift; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
