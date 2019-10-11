@@ -24,7 +24,7 @@
                                 <rect key="frame" x="20" y="81.5" width="374" height="781.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" rowHeight="178" id="t2H-0z-g7g" customClass="MercuryTableViewCell" customModule="MercuryBrowser" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="mercuryCell" rowHeight="178" id="t2H-0z-g7g" customClass="MercuryTableViewCell" customModule="MercuryBrowser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2H-0z-g7g" id="jTN-Pv-n8S">

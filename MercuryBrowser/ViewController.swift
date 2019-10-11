@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
-    var mercuryArray: [MercuryType] = []
+    var cellData: MercuryData = MercuryData(mercury: [])
 
     let mercuryImageService = MercuryImageService()
     
@@ -31,44 +31,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mercuryTableView.dataSource = self
         
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: URL(string: projectURLString)!) { (data, response, error) in
             if let data = data {
-                let projectData = try! JSONDecoder().decode(MercuryData.self, from: data)
-                self.mercuryArray = projectData.mercury
-//                print(self.mercuryArray)
-//                print(projectData.mercury)
-                for item in projectData.mercury {
-                    self.mercuryImageService.addEntry(name: item.name, URLString: item.url)
-                }
+                self.cellData = try! JSONDecoder().decode(MercuryData.self, from: data)
             }
             DispatchQueue.main.async {
                 self.mercuryTableView.reloadData()
-                self.setupTableView()
             }
         }
         task.resume()
     }
     
-    func setupTableView() {
-        mercuryTableView.delegate = self
-        mercuryTableView.dataSource = self
-        mercuryTableView.register(MercuryTableViewCell.self, forCellReuseIdentifier: "mercuryCell")
-        
-        view.addSubview(mercuryTableView)
-    }
+}
+
+extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mercuryArray.count
+        print(cellData.mercury.count)
+        return cellData.mercury.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 2
         let cell = mercuryTableView.dequeueReusableCell(withIdentifier: "mercuryCell", for: indexPath) as! MercuryTableViewCell
-        self.mercuryImageService.getImage(for: self.mercuryArray[indexPath.row].name) { (url, img) in
-            let name = self.mercuryArray[indexPath.row].name
-            let type = self.mercuryArray[indexPath.row].type
+        self.mercuryImageService.getImage(for: self.cellData.mercury[indexPath.row].name) { (url, img) in
+            let name = self.cellData.mercury[indexPath.row].name
+            let type = self.cellData.mercury[indexPath.row].type
             let image = img
             cell.name.text = name
             cell.type.text = type
@@ -76,10 +67,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         return cell
-    }
-    
-    func mercuryTableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
     }
     
 }
